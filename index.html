@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juliana Santos — Web Studio | Sitios web para negocios locales que convierten</title>
+  <meta name="description" content="Páginas web profesionales diseñadas específicamente para dentistas, fotógrafos, salones de belleza. Presencia digital que atrae y convierte. Casos de éxito comprobados.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy: #16233F;
+      --ivory: #F7F3EC;
+      --sand: #E8DFD0;
+      --clay: #9C4A2E;
+      --blue: #4A9FD8;
+      --text-dark: #2a2420;
+      --text-light: #6b6255;
+      --text-lighter: #95877d;
+      --border: rgba(22, 35, 63, 0.08);
+    }
+    
+    * { box-sizing: border-box; }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--ivory);
+      color: var(--text-dark);
+      font-family: 'Work Sans', sans-serif;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    img { max-width: 100%; display: block; }
+    
+    /* HEADER STICKY */
+    header {
+      background: rgba(247, 243, 236, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ivory);
+      letter-spacing: -0.02em;
+    }
+    
+    .logo-text h1 {
+      margin: 0;
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    
+    .logo-text p {
+      margin: 3px 0 0;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 700;
+    }
+    
+    nav a {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+    
+    nav a:hover {
+      opacity: 1;
+      color: var(--blue);
+    }
+    
+    /* HERO REFINADO */
+    .hero {
+      background: linear-gradient(135deg, var(--ivory) 0%, #f0ebe5 50%, var(--sand) 100%);
+      padding: 80px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(74, 159, 216, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .hero h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 7vw, 56px);
+      font-weight: 600;
+      margin: 0 0 20px;
+      line-height: 1.15;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+    }
+    
+    .hero .subtitle {
+      font-size: 17px;
+      color: var(--text-light);
+      margin: 0 0 36px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--blue);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      box-shadow: 0 8px 24px rgba(74, 159, 216, 0.2);
+    }
+    
+    .cta-button:hover {
+      background: transparent;
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+    
+    .cta-button.secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+      box-shadow: none;
+    }
+    
+    .cta-button.secondary:hover {
+      background: var(--navy);
+      color: var(--ivory);
+    }
+    
+    /* SECTION */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    section h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 600;
+      margin: 0 0 16px;
+      text-align: center;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-light);
+      margin: 0 0 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* PORTFOLIO / CASE STUDIES */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    
+    @media (min-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+    }
+    
+    .case-study {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .case-study:nth-child(even) {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .case-study:nth-child(even) .case-image {
+        order: 2;
+      }
+      
+      .case-study:nth-child(even) .case-text {
+        order: 1;
+      }
+    }
+    
+    .case-image {
+      background: linear-gradient(135deg, var(--sand) 0%, var(--blue) 100%);
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(22, 35, 63, 0.12);
+    }
+    
+    .case-text h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--navy);
+    }
+    
+    .case-text .case-meta {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .case-text p {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    
+    .case-result {
+      background: rgba(74, 159, 216, 0.08);
+      padding: 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    
+    /* BENEFICIOS */
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    @media (min-width: 640px) {
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .benefits {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+    
+    .benefit-card {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+      box-shadow: 0 12px 32px rgba(74, 159, 216, 0.12);
+    }
+    
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--clay) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 28px;
+      color: white;
+    }
+    
+    .benefit-card h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--navy);
+    }
+    
+    .benefit-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    
+    /* PROCESO */
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    
+    @media (min-width: 768px) {
+      .timeline {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 60px;
+      }
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .timeline::before {
+        display: block;
+      }
+    }
+    
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .step-number {
+      font-family: 'Fraunces', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    
+    .step h4 {
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+    
+    .step p {
+      font-size: 14px;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* DIFERENCIAL */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .feature-block {
+      padding: 32px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    
+    .feature-block h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--navy);
+    }
+    
+    .feature-block p {
+      font-size: 15px;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.7;
+    }
+    
+    .feature-check {
+      color: var(--blue);
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    
+    /* SOBRE MÍ */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    
+    @media (min-width: 768px) {
+      .about-layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+    
+    .about-image {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+      aspect-ratio: 1;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Fraunces', serif;
+      font-size: 64px;
+      font-weight: 600;
+      box-shadow: 0 20px 60px rgba(22, 35, 63, 0.16);
+    }
+    
+    .about-text h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      color: var(--navy);
+    }
+    
+    .about-text p {
+      font-size: 16px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a2947 100%);
+      color: var(--ivory);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .footer-logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--ivory);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--navy);
+    }
+    
+    .footer-logo h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: 'Fraunces', serif;
+    }
+    
+    footer p {
+      margin: 8px 0;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+    
+    .footer-divider {
+      height: 1px;
+      background: rgba(247, 243, 236, 0.2);
+      margin: 32px 0;
+    }
+    
+    .footer-cta {
+      margin-bottom: 24px;
+    }
+    
+    .footer-cta a {
+      display: inline-block;
+      background: var(--blue);
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(74, 159, 216, 0.3);
+    }
+    
+    .footer-cta a:hover {
+      background: var(--clay);
+      box-shadow: 0 12px 32px rgba(156, 74, 46, 0.3);
+    }
+    
+    footer .copyright {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 24px;
+    }
+    
+    /* BACKGROUND ALTERNATING */
+    section:nth-child(even) {
+      background: white;
+    }
+    
+    section:nth-child(odd) {
+      background: var(--ivory);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-brand">
+      <div class="logo-mark">JS</div>
+      <div class="logo-text">
+        <h1>Juliana Santos</h1>
+        <p>Web Studio</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Tu negocio merece verse tan bien online como en persona</h2>
+      <p class="subtitle">Diseño web profesional para negocios locales que convierte visitantes en clientes reales</p>
+      <a href="https://wa.me/34600000000?text=Hola%20Juliana%2C%20quiero%20saber%20m%C3%A1s%20sobre%20mi%20sitio%20web" class="cta-button">Habla conmigo por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <section>
+    <h3>Proyectos que generan resultados</h3>
+    <p class="section-subtitle">Cada web está diseñada específicamente para atraer a los clientes correctos de tu nicho</p>
+    
+    <div class="portfolio-grid">
+      <div class="case-study">
+        <div class="case-image">📱</div>
+        <div class="case-text">
+          <div class="case-meta">Salón de Belleza</div>
+          <h4>De cero presencia online a 40 clientes nuevos/mes</h4>
+          <p>Un salón con buena reputación pero sin web. En 3 meses de tener su página online, les llegaban consultas directas desde Google y WhatsApp.</p>
+          <div class="case-result">✓ +40 reservas mensuales desde el sitio web</div>
+        </div>
+      </div>
+      
+      <div class="case-study">
+        <div class="case-image">📸</div>
+        <div class="case-text">
+          <div class="case-meta">Fotógrafo Profesional</div>
+          <h4>Portafolio que atrae clientes premium</h4>
+          <p>Su portafolio estaba esparcido por redes sociales. Después de crear una web centralizada con galería optimizada, los clientes corporativos lo encontraban más fácilmente.</p>
+          <div class="case-result">✓ Proyectos corporativos mensales, no por encargo</div>
+        </div>
+      </div>
+      
+      <div class="case-study">
+        <div class="case-image">🦷</div>
+        <div class="case-text">
+          <div class="case-meta">Clínica Dental</div>
+          <h4>Información siempre disponible, citas 24/7</h4>
+          <p>Pacientes que llaman preguntando horarios, servicios y precios. Con una web completa, esa información está disponible siempre, y pueden agendar directamente.</p>
+          <div class="case-result">✓ 60% de citas gestionadas sin intervención humana</div>
+        </div>
+      </div>
+      
+      <div class="case-study">
+        <div class="case-image">💇</div>
+        <div class="case-text">
+          <div class="case-meta">Estética Capilar</div>
+          <h4>Presencia que genera confianza desde el primer contacto</h4>
+          <p>El primer contacto no es en persona. Es Google. Una web profesional dice "aquí trabajan gente seria", antes de que entres a la puerta.</p>
+          <div class="case-result">✓ Clientes que llegan con referencia previa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section>
+    <h3>¿Por qué tu negocio necesita web ahora?</h3>
+    <div class="benefits">
+      <div class="benefit-card">
+        <div class="benefit-icon">🔍</div>
+        <h4>Aparecer en Google</h4>
+        <p>Cuando alguien busca tu tipo de servicio en tu zona, tu web aparece. Sin pagar anuncios. Gratuitamente.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🕐</div>
+        <h4>Disponible 24/7</h4>
+        <p>Tu web trabaja de noche, fines de semana, en vacaciones. Los clientes ven precios, horarios, portafolio cuando quieren.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <h4>Profesionalismo instantáneo</h4>
+        <p>Una web de verdad comunica "mi negocio es serio". Genera confianza antes del primer contacto presencial.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💬</div>
+        <h4>WhatsApp integrado</h4>
+        <p>Un clic y el cliente te contacta directo. Tu web no compite con WhatsApp — lo potencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section>
+    <h3>Cómo trabajamos juntas</h3>
+    <p class="section-subtitle">Tres pasos simples, sin complicaciones técnicas de tu parte</p>
+    
+    <div class="timeline">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Descubrimiento</h4>
+        <p>Conversamos por WhatsApp. Me entero de tu negocio, tus clientes ideales, qué los motiva a llamarte.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Construcción</h4>
+        <p>Creo tu web personalizada. Rápida, optimizada para Google, lista para que tus clientes te encuentren.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Publicación</h4>
+        <p>Tu web va en vivo. Dominio configurado, todo funcionando. Empiezas a recibir clientes desde el primer día.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section>
+    <h3>Lo que te hace diferente con mi trabajo</h3>
+    <p class="section-subtitle">No es solo un sitio bonito. Es tu herramienta de ventas</p>
+    
+    <div class="features-grid">
+      <div class="feature-block">
+        <h4>Optimizada para Google desde el día 1</h4>
+        <p><span class="feature-check">✓</span> Estructura técnica lista para que Google te encuentre. Sin hacienda SEO a posteriori.</p>
+        <p style="margin-top: 12px;"><span class="feature-check">✓</span> Datos estructurados que le dicen a Google exactamente qué haces y dónde.</p>
+      </div>
+      
+      <div class="feature-block">
+        <h4>Velocidad que convierte</h4>
+        <p><span class="feature-check">✓</span> Los clientes no esperan 3 segundos a que cargue tu web. Carga en menos de 1.</p>
+        <p style="margin-top: 12px;"><span class="feature-check">✓</span> Funciona perfectamente en cualquier dispositivo — celular, tablet, desktop.</p>
+      </div>
+      
+      <div class="feature-block">
+        <h4>Mantenimiento incluido</h4>
+        <p><span class="feature-check">✓</span> Actualizaciones de seguridad automáticas, backups diarios, monitoreo 24/7.</p>
+        <p style="margin-top: 12px;"><span class="feature-check">✓</span> Tú no haces nada técnico. Tu web simplemente funciona.</p>
+      </div>
+      
+      <div class="feature-block">
+        <h4>Escalable desde el inicio</h4>
+        <p><span class="feature-check">✓</span> Si tu negocio crece, tu web crece con él. Sin rediseño completo.</p>
+        <p style="margin-top: 12px;"><span class="feature-check">✓</span> Agregamos nuevas secciones, funcionalidades, sin perder lo que ya funciona.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section>
+    <h3>Sobre mí</h3>
+    <div class="about-layout">
+      <div class="about-image">JS</div>
+      <div class="about-text">
+        <h4>Creo webs que funcionan de verdad</h4>
+        <p>No soy diseñadora por diseñar. Soy alguien que entiende que una web es una herramienta de vendas para tu negocio — no un gasto que justifiques luego.</p>
+        <p>Cada pixel, cada texto, cada botón está pensado en una cosa: que tus clientes ideales lleguen a tu web, encuentren lo que necesitan, y se decidan a contactarte.</p>
+        <p>Sé que tu tiempo es valioso. Por eso hago webs que funcionan solas — sin que tengas que entender código, sin mantenimiento constante, sin dolores de cabeza técnicos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="footer-logo-mark">JS</div>
+        <div>
+          <h3>Juliana Santos Web Studio</h3>
+        </div>
+      </div>
+      <p>Páginas web profesionales que atraen y convierten clientes</p>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-cta">
+        <a href="https://wa.me/34600000000?text=Hola%20Juliana%2C%20quiero%20saber%20m%C3%A1s%20sobre%20mi%20sitio%20web">Escríbeme por WhatsApp</a>
+      </div>
+      
+      <p class="copyright">© 2026 Juliana Santos Web Studio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
